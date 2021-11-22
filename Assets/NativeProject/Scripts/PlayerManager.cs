@@ -8,6 +8,9 @@ public class PlayerManager : MonoBehaviour
     public int damage = 2;
     private PlayerInputSys _input;
     private Animator _anim;
+    public Transform weapon;
+    private bool is_alive = true;
+
 
     private void Awake()
     {
@@ -34,10 +37,55 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Триггер атаки
         if(_input.Player.Attack.triggered)
         {
-            Debug.Log("attack");
             _anim.SetTrigger("MeleeAttack");
         }
+        //Проверка здоровья
+        if(health<=0 && is_alive==true)
+        {
+            is_alive = false;
+            die();
+        }
     }
+    //Обработчик на событие удара
+    void Hit()
+    {
+        float radius = 0.9f;
+        Collider[] hitColliders = Physics.OverlapSphere(weapon.position, radius);
+        foreach (var hitCollider in hitColliders)
+        {
+            if (hitCollider.tag == "Enemy")
+            {
+                hitCollider.SendMessage("getHit", damage);
+            }
+
+        }
+    }
+    //Обработчик получения удара
+    void getHit(int damage)
+    {
+        //Debug.Log("Player Get hit");
+        health = health - damage;
+        Debug.Log(health);
+    }
+    //Обработчик если здоровье упало ниже 0
+    void die()
+    {
+        _anim.SetTrigger("die");
+        //Деактивиация контроля
+        gameObject.GetComponent<StarterAssets.ThirdPersonController>().enabled = false;
+        gameObject.GetComponent<PlayerManager>().enabled = false;
+        Debug.Log("Dead");
+
+    }
+
+    private void OnDrawGizmos()
+    {
+        //Color transparentRed = new Color(1.0f, 0.0f, 0.0f, 0.35f);
+        //Gizmos.DrawSphere(weapon.position,0.9f);
+    }
+
+
 }
