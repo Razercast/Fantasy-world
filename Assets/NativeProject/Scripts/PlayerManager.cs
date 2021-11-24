@@ -66,18 +66,17 @@ public class PlayerManager : MonoBehaviour
     //Обработчик получения удара
     void getHit(int damage)
     {
-        //Debug.Log("Player Get hit");
+        if(is_alive==false) { return; }
+        _anim.SetTrigger("hit");
         health = health - damage;
-        Debug.Log(health);
     }
     //Обработчик если здоровье упало ниже 0
     void die()
     {
         _anim.SetTrigger("die");
-        //Деактивиация контроля
+        //Деактивиация контроля хотя каким боком SendMessage работает хз
         gameObject.GetComponent<StarterAssets.ThirdPersonController>().enabled = false;
         gameObject.GetComponent<PlayerManager>().enabled = false;
-        Debug.Log("Dead");
 
     }
 

@@ -13,4 +13,5 @@ public class PlayerHandler : MonoBehaviour
     #endregion
 
     public GameObject player;
+    public GameObject playerCameraRoot;
 }
