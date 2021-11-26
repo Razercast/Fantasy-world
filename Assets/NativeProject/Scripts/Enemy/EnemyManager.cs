@@ -31,6 +31,7 @@ public class EnemyManager : MonoBehaviour
 
     void getHit(int damage)
     {
+        Debug.Log("Test damage get");
         _anim.SetTrigger("hit");
         health = health - damage;
         //Получает урон

@@ -8,7 +8,7 @@ public class MeleeAttacker : EnemyManager
     public override void attack()
     {
         Animator anim = getAnim();
-        anim.SetTrigger("MeleeAttack");
+        anim.SetTrigger("Attack");
     }
 
     public void Hit()
@@ -23,5 +23,18 @@ public class MeleeAttacker : EnemyManager
             }
         }
         // Debug.Log("hit end");
+    }
+    private void OnDrawGizmos()
+    {
+        //Gizmos.color = Color.red;
+        //Gizmos.DrawWireSphere(attackPos.position, attackRadius);
+    }
+    public void FootR()
+    {
+        //«вук шагов
+    }
+    public void FootL()
+    {
+        //и тут тоже
     }
 }

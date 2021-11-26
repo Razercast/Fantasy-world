@@ -84,6 +84,7 @@ public class EnemyAI : MonoBehaviour
                 agent.SetDestination(target.position);
             } else
             {
+                agent.SetDestination(transform.position);
                 FaceTarget();
                 Attack();
                 _anim.SetFloat("Speed", 0f);
@@ -123,7 +124,7 @@ public class EnemyAI : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, lookRadius);
+        //Gizmos.color = Color.red;
+        //Gizmos.DrawWireSphere(transform.position, lookRadius);
     }
 }

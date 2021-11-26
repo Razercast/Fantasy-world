@@ -11,6 +11,9 @@ public class PlayerManager : MonoBehaviour
     public Transform weapon;
     private bool is_alive = true;
 
+    private Inventory inventory; // Инвентарь
+    [SerializeField] UI_Inventory uiInventory;
+
 
     private void Awake()
     {
@@ -31,7 +34,8 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        inventory = new Inventory();
+        uiInventory.SetInventory(inventory); //Стоп тут
     }
 
     // Update is called once per frame
