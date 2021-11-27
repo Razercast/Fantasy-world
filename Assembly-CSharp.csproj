@@ -96,6 +96,7 @@
     <Compile Include="Assets\ExplosiveLLC\RPG Character Mecanim Animation Pack\Code\Actions\Weapon\Relax.cs" />
     <Compile Include="Assets\NativeProject\Scripts\Enemy\EnemyManager.cs" />
     <Compile Include="Assets\ExplosiveLLC\RPG Character Mecanim Animation Pack\Code\RPGCharacterNavigationController.cs" />
+    <Compile Include="Assets\NativeProject\Scripts\Inventory\Inventory.cs" />
     <Compile Include="Assets\ExplosiveLLC\RPG Character Mecanim Animation Pack\Code\Actions\Movement\Jump.cs" />
     <Compile Include="Assets\ExplosiveLLC\RPG Character Mecanim Animation Pack\Code\Actions\Weapon\SwitchWeapon.cs" />
     <Compile Include="Assets\ExplosiveLLC\RPG Character Mecanim Animation Pack\Code\Actions\Character\Dodge.cs" />
@@ -125,20 +126,21 @@
     <Compile Include="Assets\ExplosiveLLC\RPG Character Mecanim Animation Pack\Code\Actions\Character\Shoot.cs" />
     <Compile Include="Assets\ExplosiveLLC\RPG Character Mecanim Animation Pack\Code\CoroutineQueue.cs" />
     <Compile Include="Assets\ExplosiveLLC\RPG Character Mecanim Animation Pack\Code\Actions\Movement\DoubleJump.cs" />
+    <Compile Include="Assets\NativeProject\Scripts\Inventory\Item.cs" />
     <Compile Include="Assets\ExplosiveLLC\RPG Character Mecanim Animation Pack\Code\Actions\Movement\GetHit.cs" />
     <Compile Include="Assets\ExplosiveLLC\RPG Character Mecanim Animation Pack\Code\RPGCharacterWeaponController.cs" />
     <Compile Include="Assets\ExplosiveLLC\RPG Character Mecanim Animation Pack\Code\Actions\SimpleActionHandler.cs" />
     <Compile Include="Assets\ExplosiveLLC\Demo Elements\Code\NoJumpSlime.cs" />
     <Compile Include="Assets\NativeProject\Scripts\Enemy\MeleeAttacker.cs" />
+    <Compile Include="Assets\NativeProject\Scripts\Inventory\ItemPickup.cs" />
     <Compile Include="Assets\NativeProject\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\ExplosiveLLC\SuperCharacterController\SuperCharacterController\Core\SuperCharacterController.cs" />
     <Compile Include="Assets\ExplosiveLLC\RPG Character Mecanim Animation Pack\Code\Actions\ActionHandler.cs" />
     <Compile Include="Assets\ExplosiveLLC\RPG Character Mecanim Animation Pack\Code\Actions\Character\Emote.cs" />
     <Compile Include="Assets\ExplosiveLLC\RPG Character Mecanim Animation Pack\Code\RPGCharacterController.cs" />
     <Compile Include="Assets\ExplosiveLLC\RPG Character Mecanim Animation Pack\Code\Actions\Character\Cast.cs" />
-    <Compile Include="Assets\NativeProject\Scripts\Inventory\Inventory.cs" />
-    <Compile Include="Assets\NativeProject\Scripts\Inventory\Item.cs" />
-    <Compile Include="Assets\NativeProject\Scripts\Inventory\UI_Inventory.cs" />
+    <Compile Include="Assets\NativeProject\Scripts\Inventory\InventoryUI.cs" />
+    <Compile Include="Assets\NativeProject\Scripts\Inventory\InventorySlot.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\StarterAssets\Environment\Shaders\Built-in_RP\Triplanar.shader" />

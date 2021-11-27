@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item
+[CreateAssetMenu(fileName = "New Item", menuName ="Inventory/Item")]
+public class Item : ScriptableObject
 {
-    public enum ItemType
+    new public string name = "New Item";
+    public Sprite icon = null;
+    public bool isDefaultItem = false;
+
+    public virtual void Use()
     {
-        Sword,
-        HealthPotion,
-        ManaPotion,
-        Coin,
+        //Something
+        Debug.Log("Using" + name);
     }
-    public ItemType itemType;
-    public int amount;
 }

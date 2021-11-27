@@ -2,19 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory
+public class Inventory : MonoBehaviour
 {
-    private List<Item> itemList;
-    public Inventory()
+    #region Singleton
+    public static Inventory instance;
+    private void Awake()
     {
-        itemList = new List<Item>();
-        
-        AddItem(new Item { itemType = Item.ItemType.Sword,amount = 1 });
-        Debug.Log(itemList.Count);
+        if(instance != null)
+        {
+            Debug.Log("More than one instance inventory found");
+            return;
+        }
+        instance = this;
+    }
+    #endregion
+    public List<Item> items = new List<Item>();
+    public int space = 20;
+    public delegate void OnItemChanged();
+    public OnItemChanged onItemChangedCallback;
+    public bool Add(Item item)
+    {
+        if(!item.isDefaultItem)
+        {
+            if(items.Count >= space)
+            {
+                Debug.Log("Not enought room");
+                return false;
+            }
+            items.Add(item);
+            if(onItemChangedCallback!=null)
+            {
+                onItemChangedCallback.Invoke();
+            }
+        }
+        return true;
+    }
+    public void Remove(Item item)
+    {
+        items.Remove(item);
+        if (onItemChangedCallback != null)
+        {
+            onItemChangedCallback.Invoke();
+        }
     }
 
-    public void AddItem(Item item)
-    {
-        itemList.Add(item);
-    }
 }
