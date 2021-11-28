@@ -17,6 +17,7 @@ public class Inventory : MonoBehaviour
     }
     #endregion
     public List<Item> items = new List<Item>();
+    
     public int space = 20;
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
@@ -24,6 +25,7 @@ public class Inventory : MonoBehaviour
     {
         if(!item.isDefaultItem)
         {
+            GetItems();
             if(items.Count >= space)
             {
                 Debug.Log("Not enought room");
@@ -44,6 +46,11 @@ public class Inventory : MonoBehaviour
         {
             onItemChangedCallback.Invoke();
         }
+    }
+
+    public void GetItems()
+    {
+        
     }
 
 }

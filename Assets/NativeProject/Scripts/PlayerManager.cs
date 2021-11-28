@@ -11,8 +11,7 @@ public class PlayerManager : MonoBehaviour
     public Transform weapon;
     private bool is_alive = true;
 
-    //[SerializeField] private UI_Inventory uiInventory;
-   // private Inventory inventory;
+    public GameObject inventoryUI;
 
     private void Awake()
     {
@@ -20,7 +19,7 @@ public class PlayerManager : MonoBehaviour
         _input = new PlayerInputSys();
 
         //inventory = new Inventory();
-       // uiInventory.SetInventory(inventory);
+        // uiInventory.SetInventory(inventory);
 
         //ItemWorld.SpawnItemWorld(new Vector3(0, 0, 0), new Item {itemType = Item.ItemType.Sword,amount=1 });
 
@@ -50,11 +49,17 @@ public class PlayerManager : MonoBehaviour
         {
             _anim.SetTrigger("MeleeAttack");
         }
-        //Проверка здоровья
-        if(health<=0 && is_alive==true)
+
+
+        if(_input.Player.OpenInventory.triggered)
         {
-            is_alive = false;
-            die();
+            if (inventoryUI.activeSelf)
+            {
+                inventoryUI.SetActive(false);
+            } else
+            {
+                inventoryUI.SetActive(true);
+            }
         }
     }
     //Обработчик на событие удара
@@ -77,6 +82,12 @@ public class PlayerManager : MonoBehaviour
         if(is_alive==false) { return; }
         _anim.SetTrigger("hit");
         health = health - damage;
+        //Проверка здоровья
+        if (health <= 0 && is_alive == true)
+        {
+            is_alive = false;
+            die();
+        }
     }
     //Обработчик если здоровье упало ниже 0
     void die()
