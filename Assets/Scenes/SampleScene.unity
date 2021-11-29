@@ -3291,7 +3291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7255934239248700623, guid: 6fc2fe6c69bceb749b9d231eb451b2a8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fc2fe6c69bceb749b9d231eb451b2a8, type: 3}
@@ -3649,7 +3649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5564875355198406435, guid: 76d23db8fedb6df499a3910f2e58c002, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7657100063695030453, guid: 76d23db8fedb6df499a3910f2e58c002, type: 3}
       propertyPath: damage
@@ -3714,7 +3714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5807777717199997415, guid: d721f31239a4e79488e5b5e4624e900a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5807777717199997434, guid: d721f31239a4e79488e5b5e4624e900a, type: 3}
       propertyPath: unitHead
@@ -3926,6 +3926,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7969686268975825675, guid: 4b7141506eea2674097fe66e8fa280b1, type: 3}
+      propertyPath: lookRadius
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7969686268975825676, guid: 4b7141506eea2674097fe66e8fa280b1, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -3976,7 +3980,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7969686268975825679, guid: 4b7141506eea2674097fe66e8fa280b1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b7141506eea2674097fe66e8fa280b1, type: 3}
@@ -3993,7 +3997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8487767396098420824, guid: 848fc608464a7b24b93910b3f3b5d909, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8487767396098420830, guid: 848fc608464a7b24b93910b3f3b5d909, type: 3}
       propertyPath: m_RootOrder
